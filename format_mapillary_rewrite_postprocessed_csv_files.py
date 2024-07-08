@@ -24,8 +24,11 @@ def filter_and_renumber_csv(full_csv_path, required_image_names, output_path):
         writer.writerows(new_rows)
 
 def main():
-    city = 'cph'
-    base_dir = '/scratch/saishubodh/segments_data/VPR-datasets-downloader_MSLS_CPH/datasets_val/mapillary_sls/msls_images_val/train_val/cph'
+    city = 'sf'
+    if city == 'cph':
+        base_dir = '/scratch/saishubodh/segments_data/VPR-datasets-downloader_MSLS_CPH/datasets/mapillary_sls/msls_images_val/train_val/cph'
+    elif city == 'sf':
+        base_dir = '/scratch/saishubodh/segments_data/VPR-datasets-downloader_MSLS_SF/datasets/mapillary_sls/msls_images_val/train_val/sf'
     
     # Load required image names
     required_image_names = load_required_image_names(f'/home/saishubodh/2023/segment_vpr/VPR-datasets-downloader/msls_npy_files/database_{city}_image_names.csv')
