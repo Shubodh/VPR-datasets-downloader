@@ -5,6 +5,10 @@ This is useful because all VPR datasets use different ways of storing the labels
 Furthermore, some datasets (e.g. Pitts30k and Nordland) require some pre-processing, and small changes in the pre-processing can lead to changes in results.
 The goal of this codebase is therefore to ensure that researchers and practitioners in VPR can use the same standardized datasets for their experiments.
 
+### Shubodh's changes for MSLS / papillary
+adds three new scripts for filtering Mapillary data: `format_mapillary_extract_npy_files.py`, `format_mapillary_rewrite_postprocessed_csv_files.py`, and `format_mapillary_filtered.py`. These scripts are used to filter and renumber CSV files based on a set of required image names. The filtering process helps reduce the number of query images in the dataset, making it more suitable for standard VPR benchmarks.
+
+
 ## Overview
 
 The datasets are downloaded and formatted using a standard format: for some of the datasets also the maps are automatically created.
